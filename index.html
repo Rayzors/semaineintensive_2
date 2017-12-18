@@ -36,51 +36,7 @@
                 <article class="thumbnails medium-3 columns">
                     <img src="assets/img/test.jpg" alt="">
                 </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
+                
             </div>
 
         </section>
@@ -90,36 +46,27 @@
         </section>
     </div>
 
-
-  <div class="yolo">
-    bonjour
-  </div>
-
-  <div class="coucou">
-    coucou
-  </div>
-
-  <script src="assets/data.js"></script>
+  <script src="assets/js/data.js"></script>
   <script>
     var films = data.films;
 
-    var yolo = document.querySelector('.yolo');
+    var mainContainer = document.querySelector('.main .row');
+    var descriptionContainer = document.querySelector('.right');
     var list = "";
-    var coucou = document.querySelector('.coucou');
 
 
     for (var a = films.length - 1; a >= 0; a--) {
-      list = list + "<a href='#' data-id='"+ a +"' class='title'>"+ films[a].title + "</a><br '/>";
-
-      // films[a].title;
+      list = list + "<a href='#' data-id='"+ films[a].id +"' class='filmLink medium-3 columns'><article class='thumbnails medium-12'>"+ films[a].title + "</article></a>";
     }
+    mainContainer.innerHTML = list;
+
+    var title = document.querySelectorAll('.filmLink');
 
 
-    yolo.innerHTML = list;
-    var title = document.querySelectorAll('.title');
     for (var i = title.length - 1; i >= 0; i--) {
-      title[i].addEventListener('click', function() {
-        coucou.innerHTML = films[this.dataset.id].description + "<br />" + films[this.dataset.id].category + "<br />";
+      title[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        descriptionContainer.innerHTML = films[this.dataset.id].description + "<br />" + films[this.dataset.id].category + "<br />";
 ;
       })
     }
