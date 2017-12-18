@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Fan Made</title>
+  <title>Fan Made</title>
 
 </head>
 
@@ -91,6 +91,43 @@
     </div>
 
 
+  <div class="yolo">
+    bonjour
+  </div>
+
+  <div class="coucou">
+    coucou
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    var films = data.films;
+
+    var yolo = document.querySelector('.yolo');
+    var list = "";
+    var coucou = document.querySelector('.coucou');
+
+
+    for (var a = films.length - 1; a >= 0; a--) {
+      list = list + "<a href='#' data-id='"+ a +"' class='title'>"+ films[a].title + "</a><br '/>";
+
+      // films[a].title;
+    }
+
+
+    yolo.innerHTML = list;
+    var title = document.querySelectorAll('.title');
+    for (var i = title.length - 1; i >= 0; i--) {
+      title[i].addEventListener('click', function() {
+        coucou.innerHTML = films[this.dataset.id].description + "<br />" + films[this.dataset.id].category + "<br />";
+;
+      })
+    }
+
+
+
+
+  </script>
 </body>
 
 </html>
