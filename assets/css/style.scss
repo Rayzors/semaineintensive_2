@@ -1,2 +1,59 @@
 @import "compass";
 @import "foundation";
+
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    height: 50px;
+    background: #ffffff;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+}
+
+.left{
+    background: #ff0000;
+    height: calc(100vh - 50px);
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width : 100%;
+    padding: 2em;
+}
+
+.right{
+    background: #ff0000;
+    height: calc(100vh - 50px);
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    width : 100%;
+    padding: 2em;
+}
+
+.filter{
+    background: #ff0000;
+    position: fixed;
+    padding: 1em;
+    top: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+.main{
+    padding: 2em;
+    padding-top: 6em;
+    position: relative;
+    top: 50px;
+}
+
+.article{
+    width: 10% !important;
+}
