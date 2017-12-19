@@ -1,0 +1,52 @@
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="">
+    <title>Document</title>
+  </head>
+  <body>
+<script type="text/javascript">
+
+var categories = ['Action', 'Animation', 'Comedy', 'HorrorThriller'];
+var filter = document.querySelector(".filterMovie");
+var player = document.querySelectorAll(".player");
+var count = 0;
+var buttons = '';
+
+var buttonsf = function(check) {
+ if(check.checked){
+   for (let i = 0; i < player.length; i++) {
+     var elem = player[i];
+         if (elem.classList.contains(check.value.toLowerCase())) {
+           elem.style.display = "block";
+         }
+     }
+
+ }else{
+
+   for (let i = 0; i < player.length; i++) {
+     var elem = player[i];
+         if (elem.classList.contains(check.value.toLowerCase())) {
+           elem.style.display = "none";
+         }
+     }
+
+ }
+}
+
+  for (var i = 0; i < categories.length; i++) {
+
+    buttons = buttons + "<input type='checkbox' class='checkbox' id='"+categories[i]+"'value='"+categories[i]+"' checked/><label for='"+ categories[i] +"'>"+categories[i]+"</label>";
+
+
+filter.addEventListener('click', function(e){
+if (e.target.className == "checkbox") {
+  var checkboxes = e.target.parentElement.querySelectorAll(".checkbox");
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    buttonsf(checkboxes[i])
+  }
+}
+
+})
+</script>
+  </body>
+</html>
