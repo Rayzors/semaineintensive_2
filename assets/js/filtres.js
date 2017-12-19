@@ -5,7 +5,6 @@ var buttons = '';
 var buttonsf = function (check) {
     if (check.checked) {
         var value = document.querySelector('.searchbar').value.toLowerCase();
-        console.log(value)
             for (let v = 0; v < films.length; v++) {
                 const element = films[v];
                 

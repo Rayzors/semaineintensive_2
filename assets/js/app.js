@@ -23,8 +23,7 @@ var spyshow = function(){
 
 for (var a = films.length - 1; a >= 0; a--) {
     list = list + "<a href='#' data-id='" + films[a].id +
-        "' class='filmLink " + films[a].category.toLowerCase() +
-        " medium-3 columns'><article class='thumbnails medium-12'><div class='overlay'><p>play</p></div><img src='assets/img/" + films[a].img +
+        "' class='filmLink medium-3 columns'><article class='thumbnails medium-12'><div class='overlay'><p>play</p></div><img src='assets/img/" + films[a].img +
         "' alt=''></article></a>";
     // list = list + "<a href='#' data-id='" + films[a].id +
     //     "' class='filmLink medium-3 columns'><article class='thumbnails medium-12'><img src='assets/img/test.jpg' alt=''>" + films[a].title +
