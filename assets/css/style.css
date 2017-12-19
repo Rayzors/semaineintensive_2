@@ -1814,7 +1814,8 @@ button, input, optgroup, select, textarea {
   box-sizing: border-box; }
 
 body {
-  background: #ffffff; }
+  background: #0d0d0d;
+  color: #ffffff; }
 
 .header {
   height: 70px;
@@ -1826,7 +1827,7 @@ body {
   padding: 0 1em; }
 
 .left {
-  background: #f7f7f7;
+  background: #1a1a1a;
   height: calc(100vh);
   position: fixed;
   z-index: 1;
@@ -1837,7 +1838,7 @@ body {
   padding: 2em; }
 
 .right {
-  background: #f7f7f7;
+  background: #1a1a1a;
   height: calc(100vh);
   position: fixed;
   z-index: 3;
@@ -1910,3 +1911,6 @@ body {
 .filmInfo.showed {
   opacity: 1;
   transform: translateX(0); }
+
+.checkbox {
+  margin-right: 1em; }

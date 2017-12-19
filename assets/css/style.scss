@@ -6,7 +6,8 @@
 }
 
 body{
-    background: #ffffff;
+    background: darken(#1a1a1a,5%);
+    color: #ffffff;
 }
 
 .header{
@@ -20,7 +21,7 @@ body{
 }
 
 .left{
-    background: #f7f7f7;
+    background: lighten(#1a1a1a,0%);
     height: calc(100vh);
     position: fixed;
     z-index: 1;
@@ -32,7 +33,7 @@ body{
 }
 
 .right{
-    background: #f7f7f7;
+    background: lighten(#1a1a1a,0%);
     height: calc(100vh);
     position: fixed;
     z-index: 3;
@@ -128,4 +129,8 @@ body{
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.checkbox{
+    margin-right: 1em;
 }

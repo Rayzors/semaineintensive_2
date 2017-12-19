@@ -55,23 +55,18 @@ mainContainer.addEventListener('click', function (e) {
 
 searchbar.addEventListener('keyup', function () {
     var value = searchbar.value.toLowerCase();
-    list = "";
     for (var b = films.length - 1; b >= 0; b--) {
         let element = films[b];
         if (element.title.toLowerCase().indexOf(
                 value) > -1 || element.description.toLowerCase().indexOf(
                 value) > -1) {
-            // var theElem = document.querySelector('[data-id="' + element.id + '"]');
-            // theElem.style.display = "block";
-            list = list + "<a href='#' data-id='" + films[b].id +
-            "' class='filmLink " + films[b].category.toLowerCase +
-            " medium-3 columns'><article class='thumbnails medium-12'><div class='overlay'><p>play</p></div><img src='assets/img/" + films[b].img +
-            "' alt=''></article></a>";
-            descriptionContainer.innerHTML = "";
+            var theElem = document.querySelector('[data-id="' + element.id + '"]');
+            theElem.style.display = "block";
+        }else{
+            var theElem = document.querySelector('[data-id="' + element.id + '"]');
+            theElem.style.display = "none";
         }
     }
-    mainContainer.innerHTML = list;
-    var toShow = document.querySelectorAll('.filmLink');
 });
 
 window.addEventListener('scroll', function(){
