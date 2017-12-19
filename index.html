@@ -2,79 +2,50 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Fan Made</title>
+    <title>Fan Made</title>
 
 </head>
 
 <body>
-    <header class="header row medium-12 align-middle align-right">
-        <div class="filter medium-4">
-            lol
-        </div>
-        <form action="" class="medium-3 columns">
-            <fieldset class="searchbarContainer row medium-12">
-                <input type="text" class="searchbar medium-11">
-                <button class="searbarButton medium-1">S</button>
-            </fieldset>
-        </form>
-
-    </header>
 
     <div class="row medium-12">
-        <section class="left medium-2">
-            lol
+        <section class="left medium-3">
+            <form action="" class="medium-3 columns">
+                <fieldset class="searchbarContainer row medium-12">
+                    <input type="text" class="searchbar medium-11">
+                    <button class="searbarButton medium-1">S</button>
+                </fieldset>
+            </form>
+            <div class="filter">
+                
+            </div>
         </section>
 
         <section class="main medium-7 medium-offset-2">
+            <h2 class="mainTitle">Nos films</h2>
             <div class="row">
                 <article class="thumbnails medium-3 columns">
                     <img src="assets/img/test.jpg" alt="">
                 </article>
-                
+
             </div>
 
         </section>
 
         <section class="right medium-3">
-            lol
+            
         </section>
     </div>
 
-  <script src="assets/js/data.js"></script>
-  <script>
-    var films = data.films;
-
-    var mainContainer = document.querySelector('.main .row');
-    var descriptionContainer = document.querySelector('.right');
-    var list = "";
-
-
-    for (var a = films.length - 1; a >= 0; a--) {
-      list = list + "<a href='#' data-id='"+ films[a].id +"' class='filmLink medium-3 columns'><article class='thumbnails medium-12'>"+ films[a].title + "</article></a>";
-    }
-    mainContainer.innerHTML = list;
-
-    var title = document.querySelectorAll('.filmLink');
-
-
-    for (var i = title.length - 1; i >= 0; i--) {
-      title[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        descriptionContainer.innerHTML = films[this.dataset.id].description + "<br />" + films[this.dataset.id].category + "<br />";
-;
-      })
-    }
-
-
-
-
-  </script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+   
 </body>
 
 </html>

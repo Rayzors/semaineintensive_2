@@ -1813,6 +1813,9 @@ button, input, optgroup, select, textarea {
 * {
   box-sizing: border-box; }
 
+body {
+  background: #ffffff; }
+
 .header {
   height: 70px;
   background: #ffffff;
@@ -1823,47 +1826,46 @@ button, input, optgroup, select, textarea {
   padding: 0 1em; }
 
 .left {
-  background: #fff;
-  height: calc(100vh - 50px);
+  background: #f7f7f7;
+  height: calc(100vh);
   position: fixed;
-  z-index: 3;
-  top: 70px;
+  z-index: 1;
+  top: 0;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 2em; }
 
 .right {
-  background: #fff;
-  height: calc(100vh - 70px);
+  background: #f7f7f7;
+  height: calc(100vh);
   position: fixed;
   z-index: 3;
-  top: 70px;
   bottom: 0;
   right: 0;
+  top: 0;
   width: 100%;
   padding: 2em; }
 
 .main {
   padding: 1em 2em;
   position: relative;
-  top: 70px; }
-
-.main:before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  box-shadow: 0 10px 2px rgba(0, 0, 0, 0.075); }
+  z-index: 2;
+  overflow: hidden; }
 
 .thumbnails {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+  transition: transform 0.2s ease; }
+.thumbnails:hover {
+  transform: scale(1.2); }
+.thumbnails.active {
+  border: 2px solid #ff0000; }
 
 .searchbarContainer {
   padding: 0;
-  margin: 0;
+  margin: 3.5em 0;
   overflow: hidden; }
 
 .searchbar {
@@ -1872,3 +1874,11 @@ button, input, optgroup, select, textarea {
 
 .searchbarButton {
   border: 0; }
+
+.filmLink {
+  text-align: center;
+  text-decoration: none;
+  color: #1a1a1a; }
+
+.mainTitle {
+  font-size: 56px; }
