@@ -4,6 +4,7 @@ var data = {
     films: [{
         id : 1,
         src: 'TIE+Fighter+-+short+film(720p).mp4',
+        img: 'TIE+Fighter+-+short+film(720p).png',
         title: 'TIE Fighter - short film',
         duration: '7:27',
         author: 'OtaKing77077',
@@ -17,6 +18,7 @@ var data = {
     }, {
         id : 2,
         src: 'Naruto+Live+Action+(avec+Florian+Nguyen+et+Aziatomik)(720p).mp4',
+        img: 'Naruto+Live+Action+(avec+Florian+Nguyen+et+Aziatomik)(720p).png',
         title: 'Naruto Live Action (avec Florian Nguyen et Aziatomik)',
         duration: '1:47',
         author: 'Brice Duan',
@@ -30,6 +32,7 @@ var data = {
     }, {
         id : 3,
         src: 'Dragon+Ball+vs+Naruto.+Anime+fight.(720p).mp4',
+        img: 'Dragon+Ball+vs+Naruto.+Anime+fight.(720p).png',
         title: 'Dragon Ball vs Naruto. Anime fight',
         duration: '8:39',
         author: 'Alberto Barberá',
@@ -43,6 +46,7 @@ var data = {
     }, {
         id : 4,
         src: 'Naruto+Shippuden_+Dance+of+War+-+Short+Film+(Turn+On+Subtitles)(1080p).mp4',
+        img: 'Naruto+Shippuden_+Dance+of+War+-+Short+Film+(Turn+On+Subtitles)(1080p).png',
         title: 'Naruto Shippuden: Dance of War - Short Film',
         duration: '7:48',
         author: 'RivenX3i',
@@ -56,6 +60,7 @@ var data = {
     }, {
         id : 5,
         src: 'NARUTO+-+New+Movie+2018+-+Full+Trailer+AMAZING!!(720p).mp4',
+        img: 'NARUTO+-+New+Movie+2018+-+Full+Trailer+AMAZING!!(720p).png',
         title: 'NARUTO - New Movie 2018',
         duration: '12:50',
         author: 'RivenX3i',
@@ -69,6 +74,7 @@ var data = {
     }, {
         id : 6,
         src: 'Naruto+The+Movie!+(Official+Fake+Trailer)(720p).mp4',
+        img: 'Naruto+The+Movie!+(Official+Fake+Trailer)(720p).png',
         title: 'Naruto The Movie! (Official Fake Trailer)',
         duration: '3:15',
         author: 'nigahiga',
@@ -82,6 +88,7 @@ var data = {
     }, {
         id : 7,
         src: 'Red+Hood_+The+Fallen+-+DC+Comic+Batman+Fan+Film(720p).mp4',
+        img: 'Red+Hood_+The+Fallen+-+DC+Comic+Batman+Fan+Film(720p).png',
         title: 'Red Hood: The Fallen - DC Comic Batman Fan Film',
         duration: '23:16',
         author: 'Toby Bajrovic',
@@ -95,6 +102,7 @@ var data = {
     }, {
         id : 8,
         src: 'JUSTICE+LEAGUE_+Trinity+Force+_+DC+FAN+FILM+_(720p).mp4',
+        img: 'JUSTICE+LEAGUE_+Trinity+Force+_+DC+FAN+FILM+_(720p).png',
         title: 'JUSTICE LEAGUE: Trinity Force | DC FAN FILM |',
         duration: '16:29',
         author: 'SHIELDS Productions',
@@ -108,6 +116,7 @@ var data = {
     }, {
         id : 9,
         src: 'The+Mad+Hatter+-+Fan+Film(720p).mp4',
+        img: 'The+Mad+Hatter+-+Fan+Film(720p).png',
         title: 'The Mad Hatter - Fan Film',
         duration: '6:16',
         author: 'Wolfspider Productions',
@@ -121,6 +130,7 @@ var data = {
     }, {
         id : 10,
         src: 'The+Flash+Lite+(comedy+fan+film)(720p).mp4',
+        img: 'The+Flash+Lite+(comedy+fan+film)(720p).png',
         title: 'The Flash Lite (comedy fan film)',
         duration: '10:14',
         author: 'The Chublin Brothers',
@@ -134,6 +144,7 @@ var data = {
     }, {
         id : 11,
         src: 'Clash+at+the+Cantina+(2014)+-+Star+Wars+Fan+Film(720p).mp4',
+        img: 'Clash+at+the+Cantina+(2014)+-+Star+Wars+Fan+Film(720p).png',
         title: 'Clash at the Cantina (2014) - Star Wars Fan Film',
         duration: '4:45',
         author: 'Corey Vidal',
@@ -147,6 +158,7 @@ var data = {
     }, {
         id : 12,
         src: 'THE+74th+HUNGER+GAMES+(SHORT+COMEDY+FAN+FILM)(720p).mp4',
+        img: 'THE+74th+HUNGER+GAMES+(SHORT+COMEDY+FAN+FILM)(720p).png',
         title: 'THE 74th HUNGER GAMES (SHORT COMEDY FAN FILM)',
         duration: '4:24',
         author: 'ChickenFeetFilms',
@@ -160,6 +172,7 @@ var data = {
     }, {
         id : 13,
         src: 'VICTIM+-+A+Short+Slender+Man+Horror+Film(720p).mp4',
+        img: 'VICTIM+-+A+Short+Slender+Man+Horror+Film(720p).png',
         title: 'VICTIM - A Short Slender Man Horror Film',
         duration: '14:30',
         author: 'Eddie Adamson',
@@ -172,7 +185,8 @@ var data = {
         category: 'Horror / Thriller'
     }, {
         id : 14,
-        src: 'DON&#039;T+MOVE+-+A+Short+Horror+Film+(2017)(720p).mp4',
+        src: 'DONT+MOVE+-+A+Short+Horror+Film+(2017)(720p).mp4',
+        img: 'DONT+MOVE+-+A+Short+Horror+Film+(2017)(720p).png',
         title: 'FALLOUT - Apocalyptic Thriller Short Film',
         duration: '7:27',
         author: 'AndrewProductionsTV',
@@ -186,6 +200,7 @@ var data = {
     }, {
         id : 15,
         src: 'Dragon+Ball+Z_+Light+of+Hope+-+Pilot(720p).mp4',
+        img: 'Dragon+Ball+Z_+Light+of+Hope+-+Pilot(720p).png',
         title: 'Dragon Ball Z: Light of Hope - Pilot',
         duration: '13:14',
         author: 'RobotUnderdog2',
@@ -199,6 +214,7 @@ var data = {
     }, {
         id : 16,
         src: 'Attack+on+Titan+-+LEVI+vs+BEAST+TITAN+-+Fan+made+animation+-+Shingeki+no+kyojin+manga+chapter+81(480p).mp4',
+        img: 'Attack+on+Titan+-+LEVI+vs+BEAST+TITAN+-+Fan+made+animation+-+Shingeki+no+kyojin+manga+chapter+81(480p).png',
         title: 'Attack on Titan - LEVI vs BEAST TITAN - Fan made animation',
         duration: '1:14',
         author: 'S.L.H Animation',
@@ -212,6 +228,7 @@ var data = {
     }, {
         id : 17,
         src: 'Chinese+teenager+created+awesome+fight+scene+animation(536p).mp4',
+        img: 'Chinese+teenager+created+awesome+fight+scene+animation(536p).png',
         title: 'Personal Animated Short 【Heat vs Repulsion】自主制作アニメ',
         duration: '3:50',
         author: 'magnil',
@@ -225,6 +242,7 @@ var data = {
     }, {
         id : 18,
         src: 'SPAWN_+THE+RECALL+-+FAN+FILM(720p).mp4',
+        img: 'SPAWN_+THE+RECALL+-+FAN+FILM(720p).png',
         title: 'SPAWN: THE RECALL - FAN FILM',
         duration: '7:56',
         author: 'Irissee',
@@ -238,6 +256,7 @@ var data = {
     }, {
         id : 19,
         src: '[Rebeler]+Madara+VS+Hashirama+-+Cosplay+Movie(720p).mp4',
+        img: '[Rebeler]+Madara+VS+Hashirama+-+Cosplay+Movie(720p).png',
         title: '[Rebeler] Madara VS Hashirama - Cosplay Movie',
         duration: '8:06',
         author: 'Rebeler Team',
