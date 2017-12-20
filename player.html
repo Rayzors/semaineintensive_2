@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="assets/css/player.css">
+  <meta charset="utf-8">
+  <title> player video</title>
+  <style media="screen">
+    .timeline {
+      width: 1000px;
+    }
+
+    #videoplayer.fullscreen {
+      width: 100vw;
+      height: 100vh;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="video">
+    <video id="videoplayer">
+      <source src="assets/video/madaravs.mp4" />
+    </video>
+  </div>
+
+
+  <div class="controls">
+    <button class="control" onclick="play('videoplayer', this)"><img class="boutonplay" src="assets/img/FS Play petit.svg" alt=""></button>
+    <button class="controlstop" onclick="resume('videoplayer')">stop</button>
+  </div>
+
+  <input type="range" class="volume" value="10" min="0" max="10">
+
+  <input class="timeline" type="range" value="0" step=".1" min="0" max="100">
+  <span class="timer"></span>
+  <span class="mute">mute</span>
+  <span class="fullscreen">ecran</span>
+  <script src="assets/js/player.js"></script>
+</body>
+
+</html>
