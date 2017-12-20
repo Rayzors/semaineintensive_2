@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="44px" viewBox="0 0 75 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>FS Fullscreen</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FS-Fullscreen" stroke="#FFFFFF">
+            <g>
+                <path d="M69.5,31.5 L69.5,38.5" id="Line" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M63,39 L69.5,39" id="Line" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="Rectangle-9" x="0.5" y="0.5" width="74" height="43" rx="3"></rect>
+                <polyline id="Path-2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(9.621681, 35.325624) rotate(-228.000000) translate(-9.621681, -35.325624) " points="5.62168103 27.3256242 13.621681 36.1438432 5.62168103 43.3256242"></polyline>
+                <path d="M5.5,5.5 L5.5,12.5" id="Line" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6,5 L12.5,5" id="Line" stroke-linecap="round" stroke-linejoin="round"></path>
+                <polyline id="Path-2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(65.621681, 8.325624) rotate(-48.000000) translate(-65.621681, -8.325624) " points="61.621681 0.325624153 69.621681 9.14384316 61.621681 16.3256242"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
