@@ -14,21 +14,27 @@
 
 <body>
 
-    <div class="row medium-12">
-        <section class="left medium-2">
-            <form action="" class="medium-12">
-                <fieldset class="searchbarContainer row medium-12">
-                    <input type="text" placeholder="Recherchez un film" class="searchbar medium-11">
-                    <button class="searbarButton medium-1">S</button>
-                </fieldset>
-            </form>
-            <div class="filter">
+    <div class="modalContainer">
+        <div class="modalOverlay"></div>
+        <div class="modal">
+        </div>
+    </div>
 
-            </div>
+    <section class="medium-12 searchbarContainer">
+        <fieldset class="searchbarItemContainer row medium-7 medium-offset-2">
+            <input type="text" placeholder="Recherchez un film" class="searchbar medium-11">
+            <button class="searbarButton medium-1">S</button>
+        </fieldset>
+    </section>
+
+    <div class="row medium-12">
+        <section class="left medium-2 row align-middle">
+                <div class="filter">
+
+                </div>            
         </section>
 
         <section class="main medium-7 medium-offset-2">
-            <h2 class="mainTitle">Nos films</h2>
             <div class="row liste">
                 <article class="thumbnails medium-3 columns">
                     <img src="assets/img/test.jpg" alt="">
@@ -39,7 +45,34 @@
         </section>
 
         <section class="right medium-3">
-            <div class="filmInfo">
+            <div class="filmInfo row align-center">
+                <h2>THE 74th HUNGER GAMES (SHORT COMEDY FAN FILM)</h2>
+                <span class="medium-12">Comedy</span>
+                <div class="medium-4">
+                    <p>Year</p>
+                    <p>2015</p>
+                </div>
+                <div class="medium-4">
+                    <p>Auteur</p>
+                    <p>
+                        <a href="">Otaking</a>
+                    </p>
+                </div>
+                <div class="medium-4">
+                    <p>Rating</p>
+                    <p>2015</p>
+                </div>
+                <div class="medium-12">
+                    <p>Langue : Français</p>
+                    <p>Sous-titre : Anglais</p>
+                </div>
+
+                <div class="medium-12">
+                    <h3>Résumé</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe laudantium quos officiis magnam nam accusamus
+                        magni minus quo libero ducimus vero quisquam exercitationem natus expedita perferendis, amet adipisci
+                        omnis eius.</p>
+                </div>
 
             </div>
         </section>
@@ -47,8 +80,8 @@
 
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/filtres.js"></script>
-   
+    <!-- <script src="assets/js/filtres.js"></script> -->
+
 </body>
 
 </html>

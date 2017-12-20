@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="105px" height="109px" viewBox="0 0 105 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Play Grand</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Play-Grand" stroke="#FFFFFF">
+            <g transform="translate(38.000000, 29.000000)">
+                <polyline id="Path-2" stroke-width="9" points="0 0 38.520687 30.1457553 0 54.6972222"></polyline>
+                <path d="M2.5,18.25 L2.5,35.75" id="Line" stroke-width="3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

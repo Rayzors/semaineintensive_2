@@ -1,0 +1,14 @@
+{
+  "name": "fanmade",
+  "version": "1.0.0",
+  "description": "Application de streaming pour fanmade",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron"
+  },
+  "author": "Kevin",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  }
+}

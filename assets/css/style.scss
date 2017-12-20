@@ -5,9 +5,19 @@
     box-sizing: border-box;
 }
 
+a{
+    color: #1a95ed;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
 body{
     background: darken(#1a1a1a,5%);
     color: #ffffff;
+    font-size: 12px;
 }
 
 .header{
@@ -21,7 +31,7 @@ body{
 }
 
 .left{
-    background: lighten(#1a1a1a,0%);
+    // background: darken(#1a1a1a,3%);
     height: calc(100vh);
     position: fixed;
     z-index: 1;
@@ -33,23 +43,23 @@ body{
 }
 
 .right{
-    background: lighten(#1a1a1a,0%);
+    background: darken(#1a1a1a,3%);
     height: calc(100vh);
     position: fixed;
-    z-index: 3;
+    z-index: 2;
     bottom: 0;
     right: 0;
     top: 0;
     width : 100%;
-    padding: 2em;
+    padding: 2em 5em;
 }
 
 .main{
-    padding: 1em 2em;
+    padding: 8em 0;
+    padding-right: 2em;
     margin-bottom: 2em;
     position: relative;
-    z-index: 2;
-    overflow: hidden;
+    z-index: 3;
 }
 
 
@@ -57,8 +67,9 @@ body{
     margin-bottom: 2em;
     box-shadow: 0 10px 15px rgba(0,0,0,0.5);
     position: relative;
+    border-radius: 4px;
     transform: scale(1);
-    transition: transform 0.2s ease;
+    transition: 0.2s ease;
 
     .overlay{
         display: flex;
@@ -72,7 +83,13 @@ body{
         display: none;
 
         p{
-            background: #ffffff;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.7);
+            border: 2px solid #1a95ed;
+            padding: 1em;
+            color: #ffffff;
         }
     }
 
@@ -81,7 +98,7 @@ body{
     }
 
     &.active{
-        border: 2px solid #ff0000;
+        border: 3px solid #1a95ed;
 
         .overlay{
             display: flex;
@@ -90,14 +107,33 @@ body{
 }
 
 .searchbarContainer{
+    position: fixed;
+    top: 0;
+    width: 100%;
     padding: 0;
-    margin: 3.5em 0;
+    margin: 0;
     overflow: hidden;
+    z-index: 5;
+}
+
+.searchbarItemContainer{
+    background: darken(#1a1a1a,5%);
+    border:0;
+    // border-bottom: 1px solid #fff;
+    padding-left: 0;    
+    padding-right: 0;    
 }
 
 .searchbar{
     border: 0;
-    padding: 0.5em;
+    padding: 1em 0;
+    background: transparent;
+    color: #ffffff;
+    transition: .2s ease;
+
+    &:focus{
+        color: #1a95ed;
+    }
 }
 
 .searchbarButton{
@@ -133,4 +169,72 @@ body{
 
 .checkbox{
     margin-right: 1em;
+}
+
+.text-align-center{
+    text-align: center !important;
+}
+
+.text-align-right{
+    text-align: right !important;
+}
+
+.note{
+    border-radius: 50%;
+    border: 2px solid #1a95ed;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.miniTitle{
+    font-weight: bold !important;
+}
+
+.modalContainer{
+    position: fixed;
+    top: 0;bottom: 0;right: 0;left: 0;
+    opacity: 0;
+    perspective: 500px;
+    z-index: -1;
+    transition : 0.2s ease;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalOverlay{
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;bottom: 0;right: 0;left: 0;
+    z-index: 55;
+    perspective: 500px;
+}
+
+.modalContainer.--open{
+    opacity: 1;
+    z-index: 10;
+}
+
+.modalContainer.--open .modal{
+    transform: translateZ(0);
+}
+
+
+.modal{
+    width: 50%;
+    height: 200px;
+    background: #ffffff;
+    z-index: 56;
+    transform: translateZ(-500px);
+    transition : 0.2s ease;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
