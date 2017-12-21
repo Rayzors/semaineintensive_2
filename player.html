@@ -10,24 +10,30 @@
 </head>
 
 <body>
+
   <div class="video">
-    <video id="videoplayer">
-      <source src="assets/video/madaravs.mp4" />
+    <video class="videoPlayer">
+      <source src="assets/videos/[Rebeler]+Madara+VS+Hashirama+-+Cosplay+Movie(720p).mp4" />
     </video>
+    <div class="controls">
+      <input class="timeline" type="range" value="0" step=".1" min="0" max="100">
+
+      <div class="controlContainer">
+        
+          <button class="btn playButton" onclick="play('videoPlayer', this)"><img class="buttonImg" src="assets/img/FS Play petit.svg" alt=""></button>
+          <button class="btn stopButton" onclick="resume('videoPlayer')"><img class="buttonImg"src="assets/img/FS Stop.svg" alt=""></button>
+      
+          <span class="mute">mute</span>
+          <input type="range" class="volume" value="10" min="0" max="10">
+      
+          <span class="timer"></span>
+          <span class="fullscreen">Fullscreen</span>
+      </div>
+    </div>
   </div>
 
 
-  <div class="controls">
-    <button class="btn control" onclick="play('videoplayer', this)"><img class="boutonplay" src="assets/img/FS Play petit.svg" alt=""></button>
-    <button class="btn controlstop" onclick="resume('videoplayer')"><img class="boutonstop"src="assets/img/FS Stop.svg" alt=""></button>
-
-    <span class="mute">mute</span>
-    <input type="range" class="volume" value="10" min="0" max="10">
-
-    <input class="timeline" type="range" value="0" step=".1" min="0" max="100">
-    <span class="timer"></span>
-
-  </div>
+  
   <script src="assets/js/player.js"></script>
 </body>
 

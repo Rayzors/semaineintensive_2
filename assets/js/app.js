@@ -33,7 +33,7 @@ var initList = ()=>{
         article.appendChild(overlay);
 
         var article_img = document.createElement("img");
-        article_img.setAttribute('src','assets/img/' + films[a].img);
+        article_img.setAttribute('src','assets/img/films/' + films[a].img);
         article.appendChild(article_img);
 
         var overlay_button = document.createElement("div");
@@ -143,6 +143,7 @@ var show_video = (id)=>{
     
     var video = document.createElement("video");
     video.setAttribute('class','videoPlayer');
+    video.setAttribute('autoplay',true);
     modalinput.appendChild(video);
 
     var video_src = document.createElement("source");
@@ -201,7 +202,7 @@ searchbar.addEventListener('keyup', ()=>{
         for (var i = 0; i < checkboxes.length; i++) {
             filter_list(checkboxes[i], value);
         }        
-    },300);
+    },500);
     
 });
 

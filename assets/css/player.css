@@ -1,22 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+
 .controls {
   background: #2a2a2a;
-  box-sizing: border-box;
-  border-radius: 5px;
-  height: 50px;
-  -moz-box-sizing: border-box;
+  color: #ffffff;
   z-index: 2;
   opacity: 1;
-  display: -webkit-flex;
-  display: -ms-flex;
+  padding: 0.5em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.controlContainer{
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
 .btn {
+  height: 50px;
+  width: 50px;
   background: transparent;
   border: 0;
 }
 
+.buttonImg{
+  width: 100%;
+  height: 100%;
+}
+
 .timeline {
-  width: 1000px;
+  width: 100%;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.video{
+  width: 100%;
+  position: relative;
+}
+
+.videoPlayer{
+  width: 100%;
+  height: 100%;
 }

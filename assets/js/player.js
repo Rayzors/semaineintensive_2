@@ -1,68 +1,108 @@
-var player = document.querySelector('#videoplayer');
+var player = document.querySelector('.videoPlayer');
+var fullscreen = document.querySelector('.fullscreen');
+var video = document.querySelector('.video');
+var playButton = document.querySelector('.playButton');
+var stopButton = document.querySelector('.stopButton');
+var volumeSlider = document.querySelector(".volume");
+var timeline = document.querySelector('.timeline');
+var mute = document.querySelector('.mute');
+var isFullscreen = false;
+var beforeState = 0;
 
-function play(idPlayer, control) {
-	var player = document.querySelector('#' + idPlayer);
+var initVideo = function(){
+	player.play();
+	player.volume = 1;
+	volumeSlider.value = 10;
+	timeline.value = 0;
+}
 
+var play = function() {
 	if (player.paused) {
 		player.play();
-		control.innerHTML = '<img class="boutonplay" src="assets/img/Pause.svg" alt="">';
-		setInterval(function () {
-			timeline.value = player.currentTime / player.duration * 100
-		}, 100)
+		playButton.innerHTML = '<img class="buttonImg" src="assets/img/icon_pause.svg" alt="">';
 	} else {
 		player.pause();
-		control.innerHTML = '<img class="boutonplay" src="assets/img/FS Play petit.svg" alt="">';
+		playButton.innerHTML = '<img class="buttonImg" src="assets/img/icon_play_petit.svg" alt="">';
 	}
 
 }
 
-function resume(idPlayer) {
-	var player = document.querySelector('#' + idPlayer);
-
+var resume = function(){
 	player.currentTime = 0;
 	player.pause();
+	playButton.innerHTML = '<img class="buttonImg" src="assets/img/icon_play_petit.svg" alt="">';
 }
 
+var enterFullscreen = function(element) {
+	if(element.requestFullscreen)
+		element.requestFullscreen();
+	else if(element.mozRequestFullScreen)
+		element.mozRequestFullScreen();
+	else if(element.webkitRequestFullscreen)
+		element.webkitRequestFullscreen();
+	else if(element.msRequestFullscreen)
+		element.msRequestFullscreen();
+}
 
+var exitFullscreen = function() {
+	if(document.exitFullscreen)
+		document.exitFullscreen();
+	else if(document.mozCancelFullScreen)
+		document.mozCancelFullScreen();
+	else if(document.webkitExitFullscreen)
+		document.webkitExitFullscreen();
+	else if(document.msExitFullscreen)
+		document.msExitFullscreen();
+}
 
-var volumeSlider = document.querySelector(".volume");
-
-volumeSlider.addEventListener('input', function () {
-	player.volume = volumeSlider.value / 10;
-})
-var timeline = document.querySelector('.timeline')
-
-
-function formatTime() {
+var formatTime = function() {
 	var mins = Math.floor((player.currentTime % 3600) / 60);
 	var secs = Math.floor(player.currentTime % 60);
+	var minsDuration = Math.floor((player.duration % 3600) / 60);
+	var secsDuration = Math.floor(player.duration % 60);
 	var timer = document.querySelector('.timer');
 	if (secs < 10) {
 		secs = "0" + secs;
 	}
-	timer.innerHTML = mins + ":" + secs;
+	if(secsDuration < 10){
+		secsDuration = "0" + secsDuration;
+	}
+	timer.innerHTML = mins + ":" + secs + "/" + minsDuration + ":" + secsDuration;
+	timeline.value = player.currentTime / player.duration * 100;
 }
 
+initVideo();
 
 
-player.addEventListener('timeupdate', formatTime)
+fullscreen.addEventListener('click', function(){
+	if (!isFullscreen) {
+		enterFullscreen(video);
+		isFullscreen = true;
+	} else {
+		exitFullscreen(video);
+		isFullscreen = false;
+	}
+	
+})
 
-timeline.addEventListener('click', function (e) {
+timeline.addEventListener('click', function(e){
 	var pos = (e.pageX - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
 	player.currentTime = pos * player.duration;
 });
 
-var mute = document.querySelector('.mute')
-
-mute.addEventListener('click', function () {
+mute.addEventListener('click', function(){
 	if (!player.muted) {
+		beforeState = volumeSlider.value;
 		player.muted = true;
 		volumeSlider.value = 0;
 	} else {
 		player.muted = false;
-		volumeSlider.value = "";
+		volumeSlider.value = beforeState;
 	}
 })
 
-var fullscreen = document.querySelector('.fullscreen');
-var video = document.querySelector('.video');
+volumeSlider.addEventListener('input', function () {
+	player.volume = volumeSlider.value / 10;
+})
+
+player.addEventListener('timeupdate', formatTime);
