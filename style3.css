@@ -1,0 +1,33 @@
+.controlBar {
+  width: 70%;
+  height: 70px;
+  background-color: grey;
+}
+
+.timeline {
+  -webkit-appearance: none;
+   width: 70%;
+   height: 5px;
+   background: #fff;
+   border-radius: 3px;
+   margin-bottom: 20px;
+}
+
+.timeline:focus {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.timeline::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #CA1818;
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  background-color: #CA1818;
+  cursor: pointer;
+}
+
+.volume {
+  width: 20%;
+}
