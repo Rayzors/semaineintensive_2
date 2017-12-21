@@ -13,6 +13,19 @@
 </head>
 
 <body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-search" viewBox="0 0 32 32">
+                <title>search</title>
+                <path d="M19.427 20.427c-1.39 0.99-3.090 1.573-4.927 1.573-4.694 0-8.5-3.806-8.5-8.5s3.806-8.5 8.5-8.5c4.694 0 8.5 3.806 8.5 8.5 0 1.837-0.583 3.537-1.573 4.927l5.585 5.585c0.55 0.55 0.546 1.431-0 1.976l-0.023 0.023c-0.544 0.544-1.431 0.546-1.976 0l-5.585-5.585zM14.5 20c3.59 0 6.5-2.91 6.5-6.5s-2.91-6.5-6.5-6.5c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5v0z"></path>
+            </symbol>
+            <symbol id="icon-quotes-left" viewBox="0 0 32 32">
+                <title>quotes-left</title>
+                <path d="M7.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.357-0.056 0.724-0.086 1.097-0.086zM25.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.358-0.056 0.724-0.086 1.097-0.086z"></path>
+            </symbol>
+        </defs>
+    </svg>
 
     <div class="modalContainer">
         <div class="modalOverlay"></div>
@@ -23,22 +36,26 @@
     <section class="medium-12 searchbarContainer">
         <fieldset class="searchbarItemContainer row medium-7 medium-offset-2">
             <input type="text" placeholder="Recherchez un film" class="searchbar medium-11">
-            <button class="searbarButton medium-1">S</button>
+            <button class="searchbarButton medium-1 row align-middle align-center">
+                <svg class="icon icon-search">
+                    <use xlink:href="#icon-search"></use>
+                </svg>
+            </button>
         </fieldset>
     </section>
 
     <div class="row medium-12">
-        <section class="left medium-2 row align-middle">
-                <div class="filter">
-
-                </div>            
+        <section class="left medium-2">
+            <div class="leftContainer row align-center align-middle">
+                    <div class="filter">
+                            
+                    </div>
+            </div>   
+           
         </section>
 
         <section class="main medium-7 medium-offset-2">
             <div class="row liste">
-                <article class="thumbnails medium-3 columns">
-                    <img src="assets/img/test.jpg" alt="">
-                </article>
 
             </div>
 
@@ -80,7 +97,6 @@
 
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
-    <!-- <script src="assets/js/filtres.js"></script> -->
 
 </body>
 

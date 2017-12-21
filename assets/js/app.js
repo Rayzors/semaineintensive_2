@@ -6,24 +6,68 @@ var descriptionContainer = document.querySelector('.filmInfo');
 var filter = document.querySelector('.filter');
 var modalC = document.querySelector('.modalContainer');
 var modal = document.querySelector('.modalOverlay');
-var player = document.querySelectorAll(".filmLink");
+var modalinput = document.querySelector('.modal');
 var buttons = '';
 var list = "";
 
-var spyshow = function () {
-    if (window.innerWidth > 400) {
-        for (let i = 0; i < toShow.length; i++) {
-            var element = toShow[i];
-            if (element.offsetTop < scrollY + (window.innerHeight / 1.2)) {
-                element.classList.add("showed");
-            }
-            if (element.offsetTop > scrollY + (window.innerHeight / 1.2)) {
-                element.classList.remove("showed");
-            }
-        }
+var initPage = ()=>{
+    initList();
+    initCheckbox();
+    document.querySelector('.thumbnails').classList.add('active');
+    show_description(films.length - 1);
+}
+
+var initList = ()=>{
+    for (var a = films.length - 1; a >= 0; a--) {
+        var filmblock = document.createElement("a");
+        filmblock.setAttribute('data-id',films[a].id);
+        filmblock.setAttribute('class','filmLink medium-3 columns');
+        mainContainer.appendChild(filmblock);
+
+        var article = document.createElement("article");
+        article.setAttribute('class', 'thumbnails medium-12');
+        filmblock.appendChild(article);
+
+        var overlay = document.createElement("div");
+        overlay.setAttribute('class','overlay');
+        article.appendChild(overlay);
+
+        var article_img = document.createElement("img");
+        article_img.setAttribute('src','assets/img/' + films[a].img);
+        article.appendChild(article_img);
+
+        var overlay_button = document.createElement("div");
+        overlay_button.setAttribute('class','overlay_button row align-middle align-center');
+        overlay.appendChild(overlay_button);
+
+        var overlay_button_img = document.createElement("img");
+        overlay_button_img.setAttribute('src','assets/img/icon_play.svg');
+        overlay_button.appendChild(overlay_button_img);
     }
 }
-var buttonsf = function (check, value) {
+
+var initCheckbox = ()=>{
+    for (var i = 0; i < categories.length; i++) {
+        var checkboxContainer = document.createElement("div");
+        checkboxContainer.setAttribute('class','checkboxContainer');
+        filter.appendChild(checkboxContainer);
+
+        var checkbox = document.createElement('input');
+        checkbox.setAttribute('type','checkbox');
+        checkbox.setAttribute('class','checkbox');
+        checkbox.setAttribute('id', categories[i]);
+        checkbox.setAttribute('value', categories[i]);
+        checkbox.setAttribute('checked', true);
+        checkboxContainer.appendChild(checkbox)
+
+        var label = document.createElement('label');
+        label.setAttribute('for', categories[i]);
+        label.textContent = categories[i];
+        checkboxContainer.appendChild(label);
+    }   
+}
+
+var filter_list = (check, value)=>{
     if (check.checked) {
         for (let v = 0; v < films.length; v++) {
             const element = films[v];
@@ -33,13 +77,12 @@ var buttonsf = function (check, value) {
                 if (element.title.toLowerCase().indexOf(
                         value) > -1 || element.description.toLowerCase().indexOf(
                         value) > -1) {
-                    
+                            
                     document.querySelector('[data-id="' + element.id + '"]').style.display = "block";
                     setTimeout(function(){
                         document.querySelector('[data-id="' + element.id + '"]').style.opacity = 1;
-                    },250);
+                    },100);
                 }else{
-
                     document.querySelector('[data-id="' + element.id + '"]').style.opacity = 0;
                     setTimeout(function(){
                         document.querySelector('[data-id="' + element.id + '"]').style.display = "none";
@@ -47,7 +90,6 @@ var buttonsf = function (check, value) {
                 }
             }
         }
-
     } else {
 
         for (let v = 0; v < films.length; v++) {
@@ -56,121 +98,117 @@ var buttonsf = function (check, value) {
                 if (element.title.toLowerCase().indexOf(
                     value) > -1 || element.description.toLowerCase().indexOf(
                     value) > -1) {
-                        document.querySelector('[data-id="' + element.id + '"]').style.opacity = 0;
-                        setTimeout(function(){
-                            document.querySelector('[data-id="' + element.id + '"]').style.display = "none";
-                        },250);
-            }
+                    document.querySelector('[data-id="' + element.id + '"]').style.opacity = 0;
+                    setTimeout(function(){
+                        document.querySelector('[data-id="' + element.id + '"]').style.display = "none";
+                    },250);
+                }
             }
         }
-
     }
 }
 
-var initPage = function(){
-    for (var a = films.length - 1; a >= 0; a--) {
-        list = list + "<a href='#' data-id='" + films[a].id +
-            "' class='filmLink medium-3 columns'><article class='thumbnails medium-12'><div class='overlay'><p class='row align-middle align-center'><img src='assets/img/icon_play.svg'></p></div><img src='assets/img/" + films[a].img +
-            "' alt=''></article></a>";
-    }
-    mainContainer.innerHTML = list;
+var show_description = (id) =>{
+    setTimeout(()=>{
+        var desc = '<h3 class="filmTitle medium-12">'+ films[id].title +'</h3>'
+        +'<div class="year medium-12">'
+            +'<span class="medium-12">'+ films[id].year +'</span><span class="medium-12">'+ films[id].category +'</span>'
+        +'</div>'
+        +'<div class="medium-8">'
+            +'<p class="miniTitle">Auteur</p>'
+            +'<p><a href="'+ films[id].author_url +'" target="_BLANK">'+ films[id].author +'</a></p>'
+        +'</div>'
+        +'<div class="medium-4">'
+            +'<p class="text-align-center miniTitle">Rating</p>'
+            +'<p class="text-align-center note">'+ films[id].rating +'</p>'
+        +'</div>'
+        +'<div class="medium-12">'
+            +'<p>Audio : '+ films[id].audio_language +'</p>'
+            +'<p>Sous-titre : '+ films[id].sub_language +'</p>'
+        +'</div>'
+    
+        +'<div class="medium-12">'
+            +'<h3>Résumé</h3>'
+            +'<p>'+ films[id].description +'</p>'
+        +'</div>';
+        
+        descriptionContainer.innerHTML = desc;
+        setTimeout(() => {
+            descriptionContainer.classList.add('showed');
+        }, 200);
+    },200)
+}
 
-    document.querySelector('.thumbnails').classList.add('active');
+var show_video = (id)=>{
+    
+    var video = document.createElement("video");
+    video.setAttribute('class','videoPlayer');
+    modalinput.appendChild(video);
 
-    show_description(films.length - 1);
+    var video_src = document.createElement("source");
+    video_src.setAttribute('src','assets/videos/'+ films[id].src);
+    video.appendChild(video_src);
 }
 
 
-var show_description = function(id){
-    var desc = '<h3>'+ films[id].title +'</h3>'
-    +'<span class="medium-12">'+ films[id].category +'</span>'
-    +'<div class="medium-4">'
-        +'<p class="miniTitle">Year</p>'
-        +'<p>'+ films[id].year +'</p>'
-    +'</div>'
-    +'<div class="medium-4">'
-        +'<p class="miniTitle">Auteur</p>'
-        +'<p><a href="'+ films[id].author_url +'" target="_BLANK">'+ films[id].author +'</a></p>'
-    +'</div>'
-    +'<div class="medium-4">'
-        +'<p class="text-align-center miniTitle">Rating</p>'
-        +'<p class="text-align-center note">'+ films[id].rating +'</p>'
-    +'</div>'
-    +'<div class="medium-12">'
-        +'<p>Audio : '+ films[id].audio_language +'</p>'
-        +'<p>Sous-titre : '+ films[id].sub_language +'</p>'
-    +'</div>'
 
-    +'<div class="medium-12">'
-        +'<h3>Résumé</h3>'
-        +'<p>'+ films[id].description +'</p>'
-    +'</div>';
-    descriptionContainer.innerHTML = desc;
-    setTimeout(function () {
-        descriptionContainer.classList.add('showed');
-    }, 250);
-}
+
 
 initPage();
 
 var toShow = document.querySelectorAll('.filmLink');
+var checkboxes = document.querySelectorAll('.checkbox');
 
-mainContainer.addEventListener('click', function (e) {
-    e.preventDefault();
-    var current = e.target.parentElement;
-    if (current.classList.contains('overlay') || current.classList.contains('active')) {
-        modalC.classList.toggle("--open");
-    } else {
-        if (document.querySelector('.thumbnails.active')) {
-            document.querySelector('.thumbnails.active').classList.toggle('active');
+for (var i = 0; i < toShow.length; i++) {
+    const element = toShow[i];
+    element.addEventListener('click', ()=>{
+        if (element.classList.contains('active')) {
+            show_video(element.dataset.id -1);
+            modalC.classList.add("--open");
+        } else {
+            if (document.querySelector('.filmLink.active')) {
+                document.querySelector('.filmLink.active').classList.toggle('active');
+            }
+            element.classList.toggle('active');
+            descriptionContainer.classList.remove('showed');
+            show_description(element.dataset.id -1);
         }
-        current.classList.toggle('active');
-        descriptionContainer.classList.remove('showed');
-        show_description(e.target.parentElement.parentElement.dataset.id - 1);
-    }
-});
-
-
-for (var i = 0; i < categories.length; i++) {
-    buttons += "<div class='checkboxContainer'>"
-                    +"<input type='checkbox' class='checkbox' id='" + categories[i] + "'value='" + categories[i] + "' checked/>"
-                    +"<label for='" + categories[i] + "'>" + categories[i] + "</label>"
-                +"</div>";
+    });
 }
 
-filter.innerHTML = buttons;
+for (var i = 0; i < checkboxes.length; i++) {
+    const element = checkboxes[i];
+    element.addEventListener('click', () =>{
+            var value = searchbar.value.toLowerCase();
+    
+            for (var i = 0; i < checkboxes.length; i++) {
+                filter_list(checkboxes[i], value);
+            }
+    });
+}
 
-filter.addEventListener('click', function (e) {
-    if (e.target.className == "checkbox") {
-        var checkboxes = e.target.parentElement.querySelectorAll(".checkbox");
+
+searchbar.addEventListener('keyup', ()=>{
+    var keyupTimer = null;    
+    if(keyupTimer){
+        window.clearTimeout(keyupTimer);
+    }
+        
+    keyupTimer = setTimeout(()=>{
+        keyupTimer = null;
         var value = searchbar.value.toLowerCase();
-
+        var checkboxes = document.querySelectorAll(".checkbox");
         for (var i = 0; i < checkboxes.length; i++) {
-            buttonsf(checkboxes[i], value)
-        }
-        spyshow();
+            filter_list(checkboxes[i], value);
+        }        
+    },300);
+    
+});
+
+modal.addEventListener("click", ()=>{
+    modalC.classList.remove("--open");
+    var delete_video = modalinput.querySelector('video');
+    if(delete_video){
+        modalinput.removeChild(delete_video);
     }
-
-});
-
-
-searchbar.addEventListener('keyup', function () {
-    var value = searchbar.value.toLowerCase();
-    var checkboxes = document.querySelectorAll(".checkbox");
-    for (var i = 0; i < checkboxes.length; i++) {
-        buttonsf(checkboxes[i], value)
-    }
-    spyshow();
-});
-
-window.addEventListener('scroll', function () {
-    spyshow();
-});
-
-window.addEventListener('load', function () {
-    spyshow();
-});
-
-modal.addEventListener("click", function(){
-    modalC.classList.toggle("--open");
 })

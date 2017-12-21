@@ -1822,7 +1822,8 @@ a:hover {
 body {
   background: #0d0d0d;
   color: #ffffff;
-  font-size: 12px; }
+  font-size: 12px;
+  overflow-y: scroll; }
 
 .header {
   height: 70px;
@@ -1834,6 +1835,7 @@ body {
   padding: 0 1em; }
 
 .left {
+  background: #151515;
   height: calc(100vh);
   position: fixed;
   z-index: 1;
@@ -1842,6 +1844,9 @@ body {
   left: 0;
   width: 100%;
   padding: 2em; }
+
+.leftContainer {
+  height: 100%; }
 
 .right {
   background: #121212;
@@ -1855,18 +1860,30 @@ body {
   padding: 2em 5em; }
 
 .main {
-  padding: 8em 0;
-  padding-right: 2em;
+  padding: 8em 2em;
   margin-bottom: 2em;
   position: relative;
   z-index: 3; }
 
-.thumbnails {
+.filmLink {
+  text-align: center;
+  text-decoration: none;
   margin-bottom: 2em;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  color: #1a1a1a;
+  transform: scale(1);
+  transition: 0.2s ease-in-out; }
+.filmLink:hover {
+  transform: scale(1.2);
+  cursor: pointer; }
+.filmLink.active .thumbnails {
+  border: 3px solid #1a95ed; }
+.filmLink.active .thumbnails .overlay {
+  display: flex; }
+
+.thumbnails {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
   position: relative;
   border-radius: 4px;
-  transform: scale(1);
   transition: 0.2s ease; }
 .thumbnails .overlay {
   display: flex;
@@ -1878,7 +1895,7 @@ body {
   right: 0;
   left: 0;
   display: none; }
-.thumbnails .overlay p {
+.thumbnails .overlay div {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -1886,12 +1903,6 @@ body {
   border: 2px solid #1a95ed;
   padding: 1em;
   color: #ffffff; }
-.thumbnails:hover {
-  transform: scale(1.2); }
-.thumbnails.active {
-  border: 3px solid #1a95ed; }
-.thumbnails.active .overlay {
-  display: flex; }
 
 .searchbarContainer {
   position: fixed;
@@ -1910,7 +1921,7 @@ body {
 
 .searchbar {
   border: 0;
-  padding: 1em 0;
+  padding: 1em 2em;
   background: transparent;
   color: #ffffff;
   transition: .2s ease; }
@@ -1918,16 +1929,11 @@ body {
   color: #1a95ed; }
 
 .searchbarButton {
-  border: 0; }
-
-.filmLink {
-  text-align: center;
-  text-decoration: none;
-  color: #1a1a1a;
-  transform: translateY(20%);
-  transition: 1s; }
-.filmLink.showed {
-  transform: translateY(0); }
+  border: 0;
+  color: #ffffff;
+  font-size: 20px; }
+.searchbarButton:hover {
+  color: #1a95ed; }
 
 .mainTitle {
   font-size: 56px; }
@@ -1949,6 +1955,9 @@ body {
 .text-align-right {
   text-align: right !important; }
 
+.filmTitle {
+  text-align: left !important; }
+
 .note {
   border-radius: 50%;
   border: 2px solid #1a95ed;
@@ -1959,6 +1968,11 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center; }
+
+.year {
+  margin: 1em 0; }
+.year span {
+  display: block; }
 
 .miniTitle {
   font-weight: bold !important; }
@@ -1996,9 +2010,10 @@ body {
   transform: translateZ(0); }
 
 .modal {
-  width: 50%;
-  height: 200px;
-  background: #ffffff;
+  max-width: 100vh;
+  max-height: 100vh;
+  margin: 0 auto;
+  background: #000;
   z-index: 56;
   transform: translateZ(-500px);
   transition: 0.2s ease;
@@ -2006,3 +2021,15 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center; }
+
+.videoPlayer {
+  width: 100%;
+  height: 100%; }
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor; }
