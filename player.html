@@ -2,11 +2,10 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="assets/css/player.css">
+  
   <meta charset="utf-8">
   <title> player video</title>
-  <style media="screen">
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -16,18 +15,20 @@
       <source src="assets/videos/[Rebeler]+Madara+VS+Hashirama+-+Cosplay+Movie(720p).mp4" />
     </video>
     <div class="controls">
-      <input class="timeline" type="range" value="0" step=".1" min="0" max="100">
+      <input class="slider timeline" type="range" value="0" step=".1" min="0" max="100">
 
-      <div class="controlContainer">
-        
-          <button class="btn playButton" onclick="play('videoPlayer', this)"><img class="buttonImg" src="assets/img/FS Play petit.svg" alt=""></button>
-          <button class="btn stopButton" onclick="resume('videoPlayer')"><img class="buttonImg"src="assets/img/FS Stop.svg" alt=""></button>
-      
-          <span class="mute">mute</span>
-          <input type="range" class="volume" value="10" min="0" max="10">
-      
-          <span class="timer"></span>
-          <span class="fullscreen">Fullscreen</span>
+      <div class="controlContainer row medium-12 align-middle">
+          <div class="medium-6 row align-middle">
+              <button class="btn playButton" onclick="play('videoPlayer', this)"><img class="buttonImg" src="assets/img/icon_play_petit.svg" alt=""></button>
+              <button class="btn stopButton" onclick="resume('videoPlayer')"><img class="buttonImg"src="assets/img/icon_stop.svg" alt=""></button>
+              <span class="timer"></span>
+          </div>
+
+          <div class="medium-6 row align-right align-middle">
+            <span class="mute">mute</span>
+            <input type="range" class="slider volume" value="10" min="0" max="10">
+            <span class="fullscreen"><img src="assets/img/icon_fullscreen.svg" alt=""></span>
+          </div>
       </div>
     </div>
   </div>

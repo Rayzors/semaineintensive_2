@@ -10,7 +10,6 @@ var isFullscreen = false;
 var beforeState = 0;
 
 var initVideo = function(){
-	player.play();
 	player.volume = 1;
 	volumeSlider.value = 10;
 	timeline.value = 0;
@@ -67,12 +66,9 @@ var formatTime = function() {
 	if(secsDuration < 10){
 		secsDuration = "0" + secsDuration;
 	}
-	timer.innerHTML = mins + ":" + secs + "/" + minsDuration + ":" + secsDuration;
+	timer.innerHTML = mins + ":" + secs + " / " + minsDuration + ":" + secsDuration;
 	timeline.value = player.currentTime / player.duration * 100;
 }
-
-initVideo();
-
 
 fullscreen.addEventListener('click', function(){
 	if (!isFullscreen) {

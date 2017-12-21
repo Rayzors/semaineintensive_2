@@ -30,29 +30,63 @@
     <div class="modalContainer">
         <div class="modalOverlay"></div>
         <div class="modal">
+            <div class="video">
+                <video class="videoPlayer">
+                </video>
+                <div class="controls">
+                    <input class="slider timeline" type="range" value="0" step=".1" min="0" max="100">
+
+                    <div class="controlContainer row medium-12 align-middle">
+                        <div class="medium-6 row align-middle">
+                            <button class="btn playButton" onclick="play('videoPlayer', this)">
+                                <img class="buttonImg" src="assets/img/icon_play_petit.svg" alt="">
+                            </button>
+                            <button class="btn stopButton" onclick="resume('videoPlayer')">
+                                <img class="buttonImg" src="assets/img/icon_stop.svg" alt="">
+                            </button>
+                            <span class="timer"></span>
+                        </div>
+
+                        <div class="medium-6 row align-right align-middle">
+                            <span class="mute">mute</span>
+                            <input type="range" class="slider volume" value="10" min="0" max="10">
+                            <span class="fullscreen">
+                                <img src="assets/img/icon_fullscreen.svg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <section class="medium-12 searchbarContainer">
-        <fieldset class="searchbarItemContainer row medium-7 medium-offset-2">
-                <span class="searchbarButton medium-1 row align-middle align-center">
-                        <svg class="icon icon-search">
-                            <use xlink:href="#icon-search"></use>
-                        </svg>
-                    </span>
+    <section class="row topbar">
+        <div class="logoContainer medium-2 columns">
+            <div class="logoItemContainer row align-center align-middle columns">
+                <img src="assets/img/logo.png" alt="">
+            </div>
+        </div>
+        <fieldset class="searchbarItemContainer medium-7">
+            <span class="searchbarButton medium-1 row align-middle align-center">
+                <svg class="icon icon-search">
+                    <use xlink:href="#icon-search"></use>
+                </svg>
+            </span>
             <input type="text" placeholder="Recherchez un film" class="searchbar medium-11">
-            
         </fieldset>
+        <div class="medium-3 columns">
+            LOL
+        </div>
     </section>
 
     <div class="row medium-12">
         <section class="left medium-2">
             <div class="leftContainer row align-center align-middle">
-                    <div class="filter">
-                            
-                    </div>
-            </div>   
-           
+                <div class="filter">
+                    <h3>Filtres</h3>
+                </div>
+            </div>
+
         </section>
 
         <section class="main medium-7 medium-offset-2">
@@ -97,7 +131,9 @@
     </div>
 
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/player.js"></script>
     <script src="assets/js/app.js"></script>
+    
 
 </body>
 

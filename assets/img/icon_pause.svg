@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="9px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Pause</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="HomePage-Avec-Video" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-410.000000, -548.000000)">
-        <g id="Pause" transform="translate(411.000000, 549.000000)" stroke="#FFFFFF">
-            <circle id="Oval-4" cx="12.5" cy="12.5" r="12.5"></circle>
-            <path d="M9.5,7.5 L9.5,17.5" id="Line-9" stroke-width="3" stroke-linecap="round"></path>
-            <path d="M15.5,7.5 L15.5,17.5" id="Line-9" stroke-width="3" stroke-linecap="round"></path>
+    <g id="HomePage-Avec-Video" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-419.000000, -555.000000)" stroke-linecap="round">
+        <g id="Pause" transform="translate(419.000000, 556.000000)" stroke="#FFFFFF" stroke-width="3">
+            <path d="M1.5,0.5 L1.5,10.5" id="Line-9"></path>
+            <path d="M7.5,0.5 L7.5,10.5" id="Line-9"></path>
         </g>
     </g>
 </svg>

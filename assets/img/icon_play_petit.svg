@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Play petit</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <ellipse id="path-1" cx="12" cy="12.5" rx="12" ry="12.5"></ellipse>
-        <filter x="-37.5%" y="-32.0%" width="191.7%" height="188.0%" filterUnits="objectBoundingBox" id="filter-2">
-            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
-            <feOffset dx="2" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
-            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
-            <feOffset dx="2" dy="3" in="shadowInner" result="shadowInner"></feOffset>
-            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
-            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Play-petit">
-            <g>
-                <polyline id="Path-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="8.72727273 6.25 17.4545455 13.1392336 8.72727273 18.75"></polyline>
-                <g id="Oval-3">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                    <use stroke="#FFFFFF" stroke-width="1" xlink:href="#path-1"></use>
-                </g>
-                <path d="M8.45454545,10.5113636 L8.45454545,14.4886364" id="Line" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Play-petit" stroke="#FFFFFF">
+            <g transform="translate(7.000000, 6.000000)">
+                <polyline id="Path-2" stroke-width="2" points="1.72727273 0.25 10.4545455 7.1392336 1.72727273 12.75"></polyline>
+                <path d="M1.45454545,4.51136364 L1.45454545,8.48863636" id="Line"></path>
             </g>
         </g>
     </g>

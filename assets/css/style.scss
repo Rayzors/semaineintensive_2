@@ -1,5 +1,4 @@
 @import "compass";
-@import "compass/reset";
 @import "foundation";
 * {
     box-sizing: border-box;
@@ -31,31 +30,47 @@ body {
 }
 
 .left {
-    background: darken(#1a1a1a,5%);
-    height: calc(100vh);
+    background: darken(#1a1a1a, 3%);
     position: fixed;
     z-index: 1;
-    top: 0;
     bottom: 0;
+    top: 50px;
     left: 0;
     width: 100%;
     padding: 2em;
 }
 
-.leftContainer{
+.leftContainer {
     height: 100%;
 }
 
 .right {
     background: darken(#1a1a1a, 3%);
-    height: calc(100vh);
     position: fixed;
     z-index: 2;
     bottom: 0;
     right: 0;
-    top: 0;
+    top: 50px;
     width: 100%;
     padding: 2em 5em;
+    overflow-x: hidden;
+    overflow-y:auto;
+}
+
+.logoContainer{
+    background:darken(#1a95ed, 10%);
+    padding: 1em !important;
+    height: 100%;
+}
+
+.logoItemContainer{
+    height: 100%;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
 }
 
 .main {
@@ -72,14 +87,12 @@ body {
     color: #1a1a1a;
     transform: scale(1);
     transition: 0.2s ease-in-out;
-
     &:hover {
         transform: scale(1.2);
         cursor: pointer;
     }
-
-    &.active{
-        .thumbnails{
+    &.active {
+        .thumbnails {
             border: 3px solid #1a95ed;
             .overlay {
                 display: flex;
@@ -88,12 +101,17 @@ body {
     }
 }
 
-
 .thumbnails {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
     border-radius: 4px;
     transition: 0.2s ease;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
     .overlay {
         display: flex;
         justify-content: center;
@@ -116,33 +134,37 @@ body {
     }
 }
 
-.searchbarContainer {
+.topbar {
     position: fixed;
+    height: 50px;
     top: 0;
     width: 100%;
+    max-width: none;
     padding: 0 !important;
     margin: 0 !important;
     overflow: hidden;
     z-index: 5;
+    background: #1a95ed;
 }
 
 .searchbarItemContainer {
-    background: darken(#1a1a1a, 5%);
+    background: #1a95ed;
     border: 0; // border-bottom: 1px solid #fff;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin: 0 !important;
+    margin: 0;
     display: flex;
 }
 
 .searchbar {
     width: 100%;
     border: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     padding: 1em 2em;
     background: transparent;
     color: #ffffff;
     transition: .2s ease;
-    
 }
 
 .searchbarButton {
@@ -245,7 +267,7 @@ body {
 
 .modal {
     max-width: 100vh;
-    max-height:100vh;
+    max-height: 100vh;
     margin: 0 auto;
     background: #000;
     z-index: 56;
@@ -257,7 +279,7 @@ body {
     align-items: center;
 }
 
-.videoPlayer{
+.videoPlayer {
     width: 100%;
     height: 100%;
 }
@@ -269,4 +291,80 @@ body {
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+}
+
+.controls {
+    background: rgba(0,0,0,0.8);
+    color: #ffffff;
+    z-index: 2;
+    opacity: 1;
+    padding: 0.5em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.controlContainer {
+    padding: 0.5em 0;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    padding: 1em;
+    margin: 0 1em;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timeline {
+    width: 100%;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+.slider {
+    -webkit-appearance: none;
+}
+
+.slider:focus {
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #CA1818;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background-color: #CA1818;
+    cursor: pointer;
+}
+
+.volume {
+    width: 100px;
+}
+
+.video {
+    width: 100%;
+    position: relative;
+}
+
+.videoPlayer {
+    width: 100%;
+    height: 100%;
 }
