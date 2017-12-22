@@ -1857,10 +1857,23 @@ body {
   bottom: 0;
   right: 0;
   top: 50px;
-  width: 100%;
-  padding: 2em 5em;
-  overflow-x: hidden;
-  overflow-y: auto; }
+  width: 100%; }
+
+.rightContainer {
+  height: 100%;
+  position: relative; }
+
+.buttonContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10%;
+  padding: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; }
 
 .logoContainer {
   background: #0f79c5;
@@ -1964,16 +1977,36 @@ body {
   color: #ffffff;
   font-size: 20px; }
 
+.connexion {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+.connexion a {
+  color: #ffffff; }
+
 .mainTitle {
   font-size: 56px; }
 
 .filmInfo {
+  height: 90%;
   opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 2em 5em;
   transform: translateX(20%);
   transition: 0.2s; }
 .filmInfo.showed {
   opacity: 1;
   transform: translateX(0); }
+
+.button_right {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid #1a95ed;
+  padding: 1em;
+  color: #ffffff; }
 
 .checkbox {
   margin-right: 1em; }

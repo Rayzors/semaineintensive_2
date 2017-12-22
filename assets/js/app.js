@@ -27,6 +27,7 @@ var initPage = ()=>{
     initCheckbox();
     document.querySelector('.filmLink').classList.add('active');
     show_description(films.length - 1);
+    document.querySelector('.button_right').setAttribute("data-id", films.length - 1);
 }
 
 var initList = ()=>{
@@ -145,6 +146,7 @@ var show_description = (id) =>{
         +'</div>';
         
         descriptionContainer.innerHTML = desc;
+        document.querySelector('.button_right').setAttribute("data-id", films[id].id);
         setTimeout(() => {
             descriptionContainer.classList.add('showed');
         }, 200);
@@ -225,6 +227,7 @@ var show_video = (id)=>{
     player.setAttribute('src','assets/videos/'+ films[id].src);
     formatTime()
     initVideo();
+    modalC.classList.add("--open");
 }
 
 var muted = ()=>{
@@ -289,7 +292,6 @@ for (var i = 0; i < toShow.length; i++) {
     element.addEventListener('click', ()=>{
         if (element.classList.contains('active')) {
             show_video(element.dataset.id -1);
-            modalC.classList.add("--open");
         } else {
             if (document.querySelector('.filmLink.active')) {
                 document.querySelector('.filmLink.active').classList.toggle('active');
@@ -311,6 +313,10 @@ for (var i = 0; i < checkboxes.length; i++) {
             }
     });
 }
+var buttonRight = document.querySelector('.button_right');
+buttonRight.addEventListener('click', ()=>{
+    show_video(buttonRight.dataset.id -1);
+});
 
 fullscreen.addEventListener('click', function(){
 	if (!isFullscreen) {
@@ -330,7 +336,6 @@ player.addEventListener('dblclick', function(){
 		exitFullscreen();
 		isFullscreen = false;
 	}
-	
 })
 
 timeline.addEventListener('input', ()=>{
