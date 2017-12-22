@@ -383,6 +383,7 @@ body {
 
 .slider::-ms-track {
     width: 100%;
+    height: 12px;
     cursor: pointer;
     /* Hides the slider so custom styles can be added */
     background: transparent;
@@ -392,23 +393,31 @@ body {
 
 .slider::-webkit-slider-runnable-track{
     width: 100%;
-    height: 12px;
+    height: 6px;
     cursor: pointer;
     background: #3071a9;
-    border: 0;
+    border: 1px solid #3071a9;
     margin: 0;
-    padding: 0;
+    transition: 0.2s;
+}
+
+.slider:hover::-webkit-slider-runnable-track{
+    height: 12px;
 }
 
 .slider::-moz-range-track {
     width: 100%;
-    height: 12px;
+    height: 6px;
     cursor: pointer;
     background: #3071a9;
-    border: 0;
+    border: 1px solid #3071a9;
     margin: 0;
-    padding: 0;
-  }
+    transition: 0.2s;
+}
+
+.slider:hover::-moz-range-track{
+    height: 12px;
+}
 
 .volume {
     width: 50px;

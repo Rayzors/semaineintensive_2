@@ -333,7 +333,7 @@ player.addEventListener('dblclick', function(){
 	
 })
 
-timeline.addEventListener('click', ()=>{
+timeline.addEventListener('input', ()=>{
 	var pos = timeline.value;
 	player.currentTime = pos * player.duration /100;
 });
