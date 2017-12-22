@@ -1842,7 +1842,10 @@ body {
   top: 50px;
   left: 0;
   width: 100%;
-  padding: 2em; }
+  padding: 2em 3em; }
+
+.leftTitle {
+  padding: 0 0.5em; }
 
 .leftContainer {
   height: 100%; }
@@ -1885,8 +1888,10 @@ body {
   transform: scale(1);
   transition: 0.2s ease-in-out; }
 .filmLink:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer; }
+.filmLink.active {
+  transform: scale(1.1); }
 .filmLink.active .thumbnails {
   border: 3px solid #1a95ed; }
 .filmLink.active .thumbnails .overlay {
@@ -1930,7 +1935,8 @@ body {
   margin: 0 !important;
   overflow: hidden;
   z-index: 5;
-  background: #1a95ed; }
+  background: #1a95ed;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); }
 
 .searchbarItemContainer {
   background: #1a95ed;
@@ -2065,27 +2071,29 @@ body {
   padding: 0.5em;
   position: absolute;
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+  transition: 1s ease; }
 
 .controlContainer {
-  padding: 0.5em 0; }
+  padding: 0.75em 1.5em; }
 
 .btn {
-  height: 50px;
-  width: 50px;
-  padding: 1em;
-  margin: 0 1em;
+  height: 30px;
+  width: 30px;
+  padding: 0.5em;
+  margin: 0 0.5em;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid #1a95ed;
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  cursor: pointer; }
 
 .buttonImg {
   width: 100%;
   height: 100%;
-  object-fit: cover; }
+  object-fit: contain; }
 
 .timeline {
   width: 100%;
@@ -2096,23 +2104,77 @@ body {
   margin: 0; }
 
 .slider {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  background: transparent; }
 
 .slider:focus {
-  -webkit-appearance: none;
   outline: none; }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #CA1818;
+  border: 1px solid #1a95ed;
   height: 12px;
   width: 12px;
   border-radius: 12px;
-  background-color: #CA1818;
+  background-color: #1a95ed;
   cursor: pointer; }
 
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #fff;
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer; }
+
+.slider::-ms-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #1a95ed;
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  background-color: #1a95ed;
+  cursor: pointer; }
+
+.slider::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent; }
+
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  background: #3071a9;
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+.slider::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  background: #3071a9;
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
 .volume {
-  width: 100px; }
+  width: 50px;
+  margin-right: 1em; }
+
+.mute {
+  height: 20px;
+  width: 35px;
+  color: #ffffff; }
+.mute img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; }
 
 .video {
   width: 100%;
@@ -2121,3 +2183,32 @@ body {
 .videoPlayer {
   width: 100%;
   height: 100%; }
+
+.checkboxContainer {
+  display: inline-block;
+  padding: 0 0.5em; }
+
+input[type="checkbox"].checkbox {
+  display: none; }
+input[type="checkbox"].checkbox:hover + label {
+  cursor: pointer; }
+
+.input[type="checkbox"].checkbox + label {
+  padding: 0.5em;
+  display: inline-block; }
+
+input[type="checkbox"].checkbox + label {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin: 0.5em 0;
+  text-align: center; }
+
+input[type="checkbox"].checkbox + label:active, input[type="checkbox"].checkbox:checked {
+  border: none;
+  margin: 2px;
+  color: #2295ED; }
+
+input[type="checkbox"].checkbox:checked + label {
+  background: #2295ED; }
