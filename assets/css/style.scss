@@ -186,6 +186,10 @@ body {
     transition: .2s ease;
 }
 
+.searchbar::placeholder{
+    color: #ffffff;
+}
+
 .searchbarButton {
     width: 10%;
     margin: 0 !important;
@@ -391,13 +395,15 @@ body {
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 1px solid #1a95ed;
+    border: 1px solid #fff;
     height: 12px;
     width: 12px;
     border-radius: 12px;
-    background-color: #1a95ed;
+    margin-top: -4px;
+    background-color: #fff;
     cursor: pointer;
 }
+
 
 .slider::-moz-range-thumb {
     -webkit-appearance: none;
@@ -411,11 +417,11 @@ body {
 
 .slider::-ms-thumb {
     -webkit-appearance: none;
-    border: 1px solid #1a95ed;
+    border: 1px solid #fff;
     height: 12px;
     width: 12px;
     border-radius: 12px;
-    background-color: #1a95ed;
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -435,12 +441,7 @@ body {
     cursor: pointer;
     background: #3071a9;
     border: 1px solid #3071a9;
-    margin: 0;
     transition: 0.2s;
-}
-
-.slider:hover::-webkit-slider-runnable-track {
-    height: 12px;
 }
 
 .slider::-moz-range-track {
@@ -449,7 +450,6 @@ body {
     cursor: pointer;
     background: #3071a9;
     border: 1px solid #3071a9;
-    margin: 0;
     transition: 0.2s;
 }
 

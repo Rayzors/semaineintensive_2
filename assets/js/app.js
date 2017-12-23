@@ -224,10 +224,11 @@ var formatTime = ()=> {
 }
 
 var show_video = (id)=>{
-    player.setAttribute('src','assets/videos/'+ films[id].src);
+    player.setAttribute('src','https://7h3wh1t3r4bb17.pw/hetic-si3/data/'+ films[id].src);
     formatTime()
     initVideo();
-    modalC.classList.add("--open");
+    modalC.classList.add("--open");   
+    
 }
 
 var muted = ()=>{
