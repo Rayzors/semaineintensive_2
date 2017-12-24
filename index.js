@@ -1,18 +1,31 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const remote = require('electron').remote;
+
 
 let mainWindow;
 
-function createWindow () {
+function createWindow() {
 
-  mainWindow = new BrowserWindow({width: 900, height: 600});
+  mainWindow = new BrowserWindow({
+    width: 1422,
+    minWidth: 1200,
+    height: 800,
+    minHeight: 657,
+    frame: false,
+    titleBarStyle: 'hidden'
+  });
+
+  // mainWindow.setMenu(null);
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   mainWindow.on('closed', () => {
     mainWindow = null;
   })
+
+
 }
 
 app.on('ready', createWindow);
@@ -27,4 +40,5 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+
 });

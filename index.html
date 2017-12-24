@@ -24,6 +24,38 @@
                 <title>quotes-left</title>
                 <path d="M7.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.357-0.056 0.724-0.086 1.097-0.086zM25.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.358-0.056 0.724-0.086 1.097-0.086z"></path>
             </symbol>
+            <symbol id="icon-play3" viewBox="0 0 32 32">
+                <title>play3</title>
+                <path d="M6 4l20 12-20 12z"></path>
+            </symbol>
+            <symbol id="icon-pause2" viewBox="0 0 32 32">
+                <title>pause2</title>
+                <path d="M4 4h10v24h-10zM18 4h10v24h-10z"></path>
+            </symbol>
+            <symbol id="icon-previous2" viewBox="0 0 32 32">
+                <title>previous2</title>
+                <path d="M8 28v-24h4v11l10-10v22l-10-10v11z"></path>
+            </symbol>
+            <symbol id="icon-heart" viewBox="0 0 32 32">
+                <title>heart</title>
+                <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
+            </symbol>
+            <symbol id="icon-enlarge2" viewBox="0 0 32 32">
+                <title>enlarge2</title>
+                <path d="M32 0v13l-5-5-6 6-3-3 6-6-5-5zM14 21l-6 6 5 5h-13v-13l5 5 6-6z"></path>
+            </symbol>
+            <symbol id="icon-cross" viewBox="0 0 32 32">
+                <title>cross</title>
+                <path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+            </symbol>
+            <symbol id="icon-minus" viewBox="0 0 32 32">
+                <title>minus</title>
+                <path d="M0 13v6c0 0.552 0.448 1 1 1h30c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1h-30c-0.552 0-1 0.448-1 1z"></path>
+            </symbol>
+            <symbol id="icon-clock2" viewBox="0 0 32 32">
+                <title>clock2</title>
+                <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM20.586 23.414l-6.586-6.586v-8.828h4v7.172l5.414 5.414-2.829 2.829z"></path>
+            </symbol>
         </defs>
     </svg>
 
@@ -60,36 +92,48 @@
         </div>
     </div>
 
-    <section class="row topbar">
-        <div class="logoContainer medium-2 columns">
+    <header class="header">
+        <div class="titleBar medium-12 columns">
             <div class="logoItemContainer row align-center align-middle columns">
                 <img src="assets/img/logo.png" alt="">
             </div>
         </div>
-        <div class="searchbarItemContainer medium-7">
-            <span class="searchbarButton medium-1 row align-middle align-center">
-                <svg class="icon icon-search">
-                    <use xlink:href="#icon-search"></use>
-                </svg>
-            </span>
-            <input type="text" placeholder="Recherchez un film" class="searchbar medium-11">
+        <div class="topbar row medium-12">
+            <div class=" medium-2">
+                <div class="userWelcome row align-middle">
+                    <p>Hello Guest !</p>
+                </div>
+            </div>
+            <div class="searchbarItemContainer medium-7">
+                <span class="searchbarButton medium-1 row align-middle align-center">
+                    <svg class="icon icon-search">
+                        <use xlink:href="#icon-search"></use>
+                    </svg>
+                </span>
+                <input type="text" placeholder="Recherchez un film" class="searchbar medium-11">
+            </div>
+            <div class="connexion medium-3 columns">
+                <a href="#">Connexion</a>
+            </div>
         </div>
-        <div class="connexion medium-3 columns">
-            <a href="#">Connexion</a>
-        </div>
-    </section>
 
-    <div class="row medium-12">
+    </header>
+
+    <div class="container row medium-12">
         <section class="left medium-2">
-            <div class="leftContainer row align-center">
+            <div class="leftContainer row column align-center">
+                <h3 class="leftTitle">Filtres</h3>
                 <div class="filter">
-                    <h3 class="leftTitle">Filtres</h3>
+                    <h3 class="lefMinitTitle">Genre</h3>
+                </div>
+                <div class="filterByYear">
+                    <h3 class="lefMinitTitle">Année</h3>
                 </div>
             </div>
 
         </section>
 
-        <section class="main medium-7 medium-offset-2">
+        <section class="main mCustomScrollbar medium-7 medium-offset-2" data-mcs-theme="dark">
             <div class="row liste">
 
             </div>
@@ -99,10 +143,24 @@
         <section class="right medium-3">
             <div class="rightContainer">
                 <div class="filmInfo row align-center">
-            
+
                 </div>
                 <div class="buttonContainer">
-                    <button class="button_right"><img src="assets/img/icon_play_petit.svg" ></button>
+                    <button class="buttonPlayVideo">
+                        <svg class="icon icon-play3">
+                            <use xlink:href="#icon-play3"></use>
+                        </svg>
+                    </button>
+                    <button class="buttonFavori">
+                        <svg class="icon icon-heart">
+                            <use xlink:href="#icon-heart"></use>
+                        </svg>
+                    </button>
+                    <button class="buttonLater">
+                        <svg class="icon icon-clock2">
+                            <use xlink:href="#icon-clock2"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
@@ -111,7 +169,6 @@
 
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
-
 
 </body>
 
