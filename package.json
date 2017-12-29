@@ -1,5 +1,6 @@
 {
-  "name": "fanmade",
+  "name": "StreamLab",
+  "productName" : "StreamLab",
   "version": "1.0.0",
   "description": "Application de streaming pour fanmade",
   "main": "index.js",
@@ -9,6 +10,7 @@
   "author": "Kevin",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^1.7.10"
+    "electron": "^1.7.10",
+    "electron-packager": "^10.1.0"
   }
 }
