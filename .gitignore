@@ -1,5 +1,4 @@
-/.sass-cache
+node_modules/
+.sass-cache/
 *.mp4
-/node_modules/*
-/release-builds/*
-/node_modules
+release-builds/*
